@@ -1,0 +1,2 @@
+add_subdirectory(DumbRayTracer)
+add_dependencies(DumbRayTracer Common)

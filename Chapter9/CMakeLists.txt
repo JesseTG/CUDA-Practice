@@ -1,0 +1,2 @@
+add_subdirectory(AtomicHistogram)
+add_dependencies(AtomicHistogram Common)

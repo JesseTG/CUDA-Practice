@@ -1,0 +1,2 @@
+add_subdirectory(StupidHeatTransfer)
+add_dependencies(StupidHeatTransfer Common)

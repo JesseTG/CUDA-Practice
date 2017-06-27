@@ -1,0 +1,17 @@
+find_package(SDL2 REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(OpenGL REQUIRED)
+include(FindPkgConfig)
+
+PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+PKG_SEARCH_MODULE(SDL2TTF REQUIRED SDL2_ttf>=2.0.0)
+
+include_directories(${SDL2_INCLUDE_DIR} ${SDL2TTF_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR})
+
+CUDA_ADD_LIBRARY(Common STATIC
+  common.hpp
+  common.cpp
+)
+
+
+target_link_libraries(Common ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} ${GLEW_LIBRARIES} ${OPENGL_LIBRARIES})
